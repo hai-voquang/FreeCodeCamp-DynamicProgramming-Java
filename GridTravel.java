@@ -1,9 +1,23 @@
 import java.util.*;
+
+/**
+ * m= target sum
+ * n= array length
+ *
+ * brute force:
+ *  O(n^m) time
+ *  O(m) space
+ *
+ * memoized:
+ *  O(n * m) time
+ *  O(m) space
+ *
+ */
 public class GridTravel {
     
     public static long countWaysRec(long m, long n){
         if(m==1 || n==1) return 1;
-        if(m==0 || n==1) return 0;
+        if(m==0 || n==0) return 0;
         return countWaysRec(m-1,n)+countWaysRec(m,n-1);
     }
     
@@ -12,7 +26,7 @@ public class GridTravel {
         if(memo.containsKey(key)) return memo.get(key);
         
         if(m==1 || n==1) return 1;
-        if(m==0 || n==1) return 0;
+        if(m==0 || n==0) return 0;
         memo.put(key,countWaysMemo(m-1,n,memo)+countWaysMemo(m,n-1,memo));
         return memo.get(key);
     }

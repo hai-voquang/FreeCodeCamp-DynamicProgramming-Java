@@ -1,5 +1,18 @@
 import java.util.*;
 
+/**
+ * m= target sum
+ * n= array length
+ *
+ * brute force:
+ *  O(n^m) time
+ *  O(m) space
+ *
+ * memoized:
+ *  O(n * m) time
+ *  O(m) space
+ *
+ */
 public class CanSum {
     public static boolean canSumRec(long target,long[] num){
         if(target==0) return true;

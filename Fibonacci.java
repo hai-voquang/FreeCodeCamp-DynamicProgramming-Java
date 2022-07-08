@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ * O(n) time
+ * O(n) space
+ */
 public class Fibonacci {
     public static long fibRec(long n){
         if(n<=2) return 1;

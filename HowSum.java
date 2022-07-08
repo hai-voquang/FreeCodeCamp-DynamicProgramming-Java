@@ -1,8 +1,21 @@
 import java.util.*;
 
+/**
+ * m= target sum
+ * n= array length
+ *
+ * brute force:
+ *  O(n^m * m) time
+ *  O(m) space
+ *
+ * memoized:
+ *  O(n * m^2) time
+ *  O(m^2) space
+ *
+ */
 public class HowSum {
 
-    public static ArrayList<Long> howSumRec(long target, long[] num){
+    public static ArrayList<Long> howSumRec(long target, long[] nums){
         if(target==0){
             ArrayList<Long> arr2=new ArrayList<>();
             return arr2;
@@ -11,12 +24,12 @@ public class HowSum {
             return null;
         }
         
-        for(int i=0;i<num.length;i++){
-            ArrayList<Long> arr2=howSumRec(target-num[i],num);
+        for(int i=0;i<nums.length;i++){
+            ArrayList<Long> arr2=howSumRec(target-nums[i],nums);
             
             if(arr2!=null){
                 arr2=new ArrayList<>(arr2);
-                arr2.add(num[i]);
+                arr2.add(nums[i]);
                 return arr2;
             }
         }
@@ -24,7 +37,7 @@ public class HowSum {
         return null;
     }
     
-    public static ArrayList<Long> howSumMemo(long target, long[] num, HashMap<Long, ArrayList<Long>> memo){
+    public static ArrayList<Long> howSumMemo(long target, long[] nums, HashMap<Long, ArrayList<Long>> memo){
         if(memo.containsKey(target)) return memo.get(target);
         if(target==0){
             ArrayList<Long> arr2=new ArrayList<>();
@@ -34,12 +47,12 @@ public class HowSum {
             return null;
         }
         
-        for(int i=0;i<num.length;i++){
-            ArrayList<Long> arr2=howSumMemo(target-num[i],num,memo);
+        for(int i=0;i<nums.length;i++){
+            ArrayList<Long> arr2=howSumMemo(target-nums[i],nums,memo);
             
             if(arr2!=null){
-                arr2.add(num[i]);
-                memo.put(target-num[i],arr2);
+                arr2.add(nums[i]);
+                memo.put(target-nums[i],arr2);
                 return arr2;
             }
         }
@@ -48,18 +61,18 @@ public class HowSum {
         return null;
     }
     
-    public static ArrayList<Long> howSumTab(long target, long[] num){
+    public static ArrayList<Long> howSumTab(long target, long[] nums){
         ArrayList<Long>[] tab = new ArrayList[(int)target+1];
         Arrays.fill(tab, null);
         
         tab[0]=new ArrayList<>();
-        
+
         for(int i=0;i<=target;i++){
             if(tab[i]!=null){
-                for(int j=0;j<num.length;j++){
-                    if(i+num[j]<=target){
-                        tab[i+(int)num[j]] = new ArrayList<>(tab[i]);
-                        tab[i+(int)num[j]].add(num[j]);
+                for(int j=0;j<nums.length;j++){
+                    if(i+nums[j]<=target){
+                        tab[i+(int)nums[j]] = new ArrayList<>(tab[i]);
+                        tab[i+(int)nums[j]].add(nums[j]);
                     }
                 }
             }

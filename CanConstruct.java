@@ -1,5 +1,17 @@
 import java.util.*;
 
+/**
+ * m = target.length
+ * n = wordBank.length
+ * brute-force
+ *  O(n^m *m) time
+ *  O(m^2) space
+ *
+ * memoized
+ * O(n * m^2) time
+ * O(m^2) space
+ *
+ */
 public class CanConstruct {
     public static boolean canConstructRec(String str, String[] arr){
         if(str.equals("")) return true;
