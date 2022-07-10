@@ -1,3 +1,4 @@
+package br.com.guilhermealvessilve.dynamic.programming.bestsum;
 import java.util.*;
 
 /**
@@ -53,7 +54,7 @@ public class BestSum {
             if (arr2 != null) {
                 arr2 = new ArrayList<>(arr2);
 /* a new ArrayList has been initialised as equal to operator would
-have refered to the return list of recursive function and hinders 
+have refered to the return list of recursive function and hinders
 the output.
 If the return was [], this step might push [3] into it for the next
 iteration if a new List is not formed */
