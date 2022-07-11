@@ -13,6 +13,10 @@ import java.util.*;
  *  O(n * m^2) time
  *  O(m^2) space
  *
+ * tabulation:
+ *  O(n * m^2) time
+ *  O(m^2) space
+ *
  */
 public class HowSum {
 

@@ -13,6 +13,9 @@ import java.util.*;
  *  O(n * m) time
  *  O(m) space
  *
+ * Tabulation:
+ * 	O(m * n) time
+ * 	O(m) space
  */
 public class CanSum {
     public static boolean canSumRec(long target,long[] num){

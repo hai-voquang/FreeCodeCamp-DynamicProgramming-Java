@@ -13,6 +13,9 @@ import java.util.*;
  *  O(n * m) time
  *  O(m) space
  *
+ *  tabulation:
+ * 	O(m * n) time
+ * 	O(m * n) space
  */
 public class GridTravel {
 
