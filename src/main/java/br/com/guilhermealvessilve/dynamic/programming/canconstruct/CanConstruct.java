@@ -9,8 +9,12 @@ import java.util.*;
  *  O(m^2) space
  *
  * memoized
- * O(n * m^2) time
- * O(m^2) space
+ *  O(n * m^2) time
+ *  O(m^2) space
+ *
+ * tabulation
+ *  O(n * m^2) time
+ *  O(m) space
  *
  */
 public class CanConstruct {

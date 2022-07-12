@@ -12,6 +12,10 @@ import java.util.*;
  * memoized
  *  O(n * m^2) time
  *  O(m^2) space
+ * 
+ * tabulation
+ *  O(n * m^2) time
+ *  O(m^2) space
  */
 public class BestSum {
 
